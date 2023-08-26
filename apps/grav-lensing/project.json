@@ -1,0 +1,79 @@
+{
+  "root": "apps/grav-lensing",
+  "sourceRoot": "apps/grav-lensing/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/grav-lensing",
+        "index": "apps/grav-lensing/src/index.html",
+        "baseHref": "/",
+        "main": "apps/grav-lensing/src/main.tsx",
+        "polyfills": "apps/grav-lensing/src/polyfills.ts",
+        "tsConfig": "apps/grav-lensing/tsconfig.app.json",
+        "assets": [
+          "apps/grav-lensing/src/favicon.ico",
+          "apps/grav-lensing/src/assets"
+        ],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/grav-lensing/src/environments/environment.ts",
+              "with": "apps/grav-lensing/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "extractCss": true,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "grav-lensing:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "grav-lensing:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/grav-lensing/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/grav-lensing"],
+      "options": {
+        "jestConfig": "apps/grav-lensing/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

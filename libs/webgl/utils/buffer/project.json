@@ -1,0 +1,33 @@
+{
+  "root": "libs/webgl/utils/buffer",
+  "sourceRoot": "libs/webgl/utils/buffer/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/webgl/utils/buffer",
+        "main": "libs/webgl/utils/buffer/src/index.ts",
+        "tsConfig": "libs/webgl/utils/buffer/tsconfig.lib.json",
+        "assets": ["libs/webgl/utils/buffer/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/webgl/utils/buffer/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/webgl/utils/buffer"],
+      "options": {
+        "jestConfig": "libs/webgl/utils/buffer/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

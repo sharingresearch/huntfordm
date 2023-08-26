@@ -1,0 +1,33 @@
+{
+  "root": "libs/webgl/utils/texture",
+  "sourceRoot": "libs/webgl/utils/texture/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/webgl/utils/texture",
+        "main": "libs/webgl/utils/texture/src/index.ts",
+        "tsConfig": "libs/webgl/utils/texture/tsconfig.lib.json",
+        "assets": ["libs/webgl/utils/texture/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/webgl/utils/texture/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/webgl/utils/texture"],
+      "options": {
+        "jestConfig": "libs/webgl/utils/texture/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

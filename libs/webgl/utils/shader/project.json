@@ -1,0 +1,33 @@
+{
+  "root": "libs/webgl/utils/shader",
+  "sourceRoot": "libs/webgl/utils/shader/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/webgl/utils/shader",
+        "main": "libs/webgl/utils/shader/src/index.ts",
+        "tsConfig": "libs/webgl/utils/shader/tsconfig.lib.json",
+        "assets": ["libs/webgl/utils/shader/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/webgl/utils/shader/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/webgl/utils/shader"],
+      "options": {
+        "jestConfig": "libs/webgl/utils/shader/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

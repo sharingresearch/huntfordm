@@ -1,0 +1,29 @@
+{
+  "root": "apps/grav-lensing-e2e",
+  "sourceRoot": "apps/grav-lensing-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/grav-lensing-e2e/cypress.json",
+        "devServerTarget": "grav-lensing:serve",
+        "tsConfig": "apps/grav-lensing-e2e/tsconfig.json"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "grav-lensing:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/grav-lensing-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["grav-lensing"]
+}

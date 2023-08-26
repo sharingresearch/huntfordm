@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "projects": {
+    "grav-lensing": "apps/grav-lensing",
+    "grav-lensing-e2e": "apps/grav-lensing-e2e",
+    "gravitational-lensing-simulation": "libs/gravitational-lensing-simulation",
+    "responsive-canvas": "libs/responsive-canvas",
+    "webgl-utils-buffer": "libs/webgl/utils/buffer",
+    "webgl-utils-shader": "libs/webgl/utils/shader",
+    "webgl-utils-texture": "libs/webgl/utils/texture"
+  }
+}
