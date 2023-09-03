@@ -143,15 +143,6 @@ export const AboutModal = ({ open, onClose }: AboutModalProps) => {
             For further details contact Shaun{" "}
             <a href="mailto:shaun@sharingresearch.com">via email</a>.
           </p>
-          <Divider />
-          <p>
-            This project received financial support from “la Caixa” Foundation
-            (ID 100010434, fellowship code LCF/BQ/PI19/11690018). This app is part of
-            projects that received funding from the European Research 
-            Council (ERC) under support from the European Research Council 
-            under the European Union's Seventh Framework Programme 
-            (FP/2007-2013) (Grant Agreement Nos. [616170], [647112] and [725456] )
-          </p>
         </ModalContent>
         <ModalFooter>
           <TextButton onClick={onClose}>Close</TextButton>
